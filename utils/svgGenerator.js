@@ -46,6 +46,16 @@ function generateErrorSVG(message = "404 NOT FOUND") {
   `;
 }
 
+// Escapar caracteres especiais para uso seguro no SVG
+function escapeHTML(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 // Generate YouTube card SVG
 function generateYoutubeCardSVG(options) {
   const {
@@ -132,7 +142,7 @@ function generateYoutubeCardSVG(options) {
             titleBaselineY + index * lineHeight
           })">
             <text fill="${titleColor}" font-family="Roboto, Segoe UI, Ubuntu, Arial, sans-serif" font-weight="600" font-size="15px">
-              <tspan x="0" dy="${lineHeight}px">${line}</tspan>
+              <tspan x="0" dy="${lineHeight}px">${escapeHTML(line)}</tspan>
             </text>
           </g>`
         )
