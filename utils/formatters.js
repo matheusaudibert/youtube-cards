@@ -72,11 +72,15 @@ function formatDuration(duration) {
 // Format views count (K, M)
 function formatViews(views) {
   const num = parseInt(views.replace(/,/g, ""));
-  if (num >= 1000 && num < 1000000) {
+
+  if (num >= 1000 && num < 10000) {
     return `${(num / 1000).toFixed(1)}K`;
+  } else if (num >= 10000 && num < 1000000) {
+    return `${Math.floor(num / 1000)}K`;
   } else if (num >= 1000000) {
-    return `${(num / 1000000).toFixed(1)}M`;
+    return `${Math.floor(num / 1000000)}M`;
   }
+
   return num.toString();
 }
 
