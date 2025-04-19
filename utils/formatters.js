@@ -64,8 +64,16 @@ function formatDuration(duration) {
     return "LIVE";
   }
 
-  const mins = Math.floor(duration / 60);
+  const hours = Math.floor(duration / 3600);
+  const mins = Math.floor((duration % 3600) / 60);
   const secs = duration % 60;
+
+  if (hours > 0) {
+    return `${hours}:${mins.toString().padStart(2, "0")}:${secs
+      .toString()
+      .padStart(2, "0")}`;
+  }
+
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
