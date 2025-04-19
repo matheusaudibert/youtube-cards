@@ -48,8 +48,14 @@ async function generateYoutubeCard(req, res) {
   let borderRadius = 5;
   if (border_radius) {
     const parsedRadius = parseInt(border_radius);
-    if (!isNaN(parsedRadius) && parsedRadius >= 0 && parsedRadius <= 25) {
-      borderRadius = parsedRadius;
+    if (!isNaN(parsedRadius)) {
+      if (parsedRadius > 25) {
+        borderRadius = 25;
+      } else if (parsedRadius < 0) {
+        borderRadius = 0;
+      } else {
+        borderRadius = parsedRadius;
+      }
     }
   }
 
