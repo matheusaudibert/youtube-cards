@@ -13,10 +13,8 @@ const {
   generateYoutubeCardSVG,
 } = require("../utils/svgGenerator");
 
-// Generate a YouTube card based on request parameters
 async function generateYoutubeCard(req, res) {
   const {
-    id,
     theme,
     background_color,
     title_color,
@@ -26,6 +24,11 @@ async function generateYoutubeCard(req, res) {
     border_radius,
     width,
   } = req.query;
+
+  const { id } = req.params;
+
+  console.log("Video ID:", id);
+  console.log("Query parameters:", req.query);
 
   if (!id) {
     res.setHeader("Content-Type", "image/svg+xml");
@@ -41,7 +44,14 @@ async function generateYoutubeCard(req, res) {
   }
 
   const shouldShowDuration = show_duration === "true";
-  const borderRadius = border_radius ? parseInt(border_radius) : 5;
+
+  let borderRadius = 5;
+  if (border_radius) {
+    const parsedRadius = parseInt(border_radius);
+    if (!isNaN(parsedRadius) && parsedRadius >= 0 && parsedRadius <= 25) {
+      borderRadius = parsedRadius;
+    }
+  }
 
   let cardWidth = 250;
   if (width) {
@@ -59,7 +69,6 @@ async function generateYoutubeCard(req, res) {
       return res.send(generateErrorSVG("404 VIDEO NOT FOUND"));
     }
 
-    // Fetch the thumbnail and convert to base64
     const thumbnailBase64 = await fetchThumbnail(id);
 
     const themes = {

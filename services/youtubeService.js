@@ -2,7 +2,6 @@ const axios = require("axios");
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
-// Fetch video data from YouTube API
 async function fetchVideoData(videoId) {
   if (!YOUTUBE_API_KEY) {
     console.error("Erro: Chave da API do YouTube não configurada");
@@ -44,12 +43,15 @@ async function fetchVideoData(videoId) {
   }
 }
 
-// Fetch video thumbnail and convert it to base64
+
 async function fetchThumbnail(videoId) {
+  
+  const cleanVideoId = videoId.split(/[&?]/)[0]; 
+
   try {
-    // First try maxresdefault
+
     const response = await axios.get(
-      `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+      `https://img.youtube.com/vi/${cleanVideoId}/maxresdefault.jpg`,
       {
         responseType: "arraybuffer",
       }
@@ -58,9 +60,9 @@ async function fetchThumbnail(videoId) {
     return Buffer.from(response.data).toString("base64");
   } catch (error) {
     try {
-      // If that fails, try hqdefault
+    
       const response = await axios.get(
-        `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+        `https://img.youtube.com/vi/${cleanVideoId}/hqdefault.jpg`,
         {
           responseType: "arraybuffer",
         }
@@ -74,7 +76,7 @@ async function fetchThumbnail(videoId) {
   }
 }
 
-// Convert ISO 8601 duration format to seconds
+
 function parseISO8601Duration(duration) {
   if (duration === "P0D") {
     return "LIVE";
