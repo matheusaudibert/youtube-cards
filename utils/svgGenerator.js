@@ -108,7 +108,10 @@ function generateYoutubeCardSVG(options) {
       <rect id="rect" rx="${borderRadius}" width="${cardWidth}" height="${totalHeight}" fill="${backgroundColor}"/>
       ${
         thumbnailBase64
-          ? `<image y="-1" width="${cardWidth}" height="${imageHeight}" clip-path="url(#image-clip)" xlink:href="data:image/jpeg;base64,${thumbnailBase64}"/>`
+          ? `<image y="-1" width="${cardWidth}" height="${imageHeight}" 
+  clip-path="url(#image-clip)" 
+  preserveAspectRatio="xMidYMid slice"
+  xlink:href="data:image/jpeg;base64,${thumbnailBase64}"/>`
           : `<rect y="-1" width="${cardWidth}" height="${imageHeight}" clip-path="url(#image-clip)" fill="#333"/>`
       }
       ${
