@@ -43,15 +43,13 @@ async function fetchVideoData(videoId) {
   }
 }
 
-
 async function fetchThumbnail(videoId) {
-  
-  const cleanVideoId = videoId.split(/[&?]/)[0]; 
+  const cleanVideoId = videoId.split(/[&?]/)[0];
 
   try {
-
+    // Usar thumbnails de baixa qualidade (mqdefault ou default)
     const response = await axios.get(
-      `https://img.youtube.com/vi/${cleanVideoId}/maxresdefault.jpg`,
+      `https://img.youtube.com/vi/${cleanVideoId}/mqdefault.jpg`,
       {
         responseType: "arraybuffer",
       }
@@ -60,9 +58,9 @@ async function fetchThumbnail(videoId) {
     return Buffer.from(response.data).toString("base64");
   } catch (error) {
     try {
-    
+      // Fallback para qualidade ainda mais baixa
       const response = await axios.get(
-        `https://img.youtube.com/vi/${cleanVideoId}/hqdefault.jpg`,
+        `https://img.youtube.com/vi/${cleanVideoId}/default.jpg`,
         {
           responseType: "arraybuffer",
         }
@@ -75,7 +73,6 @@ async function fetchThumbnail(videoId) {
     }
   }
 }
-
 
 function parseISO8601Duration(duration) {
   if (duration === "P0D") {
