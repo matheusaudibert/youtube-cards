@@ -2,6 +2,8 @@
 
 An SVG card generator for YouTube videos that can be easily embedded in any website or README.
 
+_This project is inspired in [github-readme-youtube-cards](https://github.com/DenverCoder1/github-readme-youtube-cards) by [DenverCoder1](https://github.com/DenverCoder1). Thx!_
+
 ## How it works
 
 The service receives a YouTube video ID, fetches the video data using the official YouTube API, and generates a customized SVG with the video information. The generated card is optimized for fast loading and can be styled according to your preferences.
