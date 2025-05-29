@@ -67,7 +67,3 @@ Make sure your request is meaningful and you have tested the app locally before 
 ## Support
 
 _If you're using this repo, feel free to show support and give this repo a ⭐ star! It means a lot, thank you :)_
-
-<p align="left">
-  <a href="https://www.youtube.com/channel/UCIO1e3zJ-c2oQCWnmY4nqIQ?sub_confirmation=1"><img alt="Youtube" title="Youtube" src="https://img.shields.io/badge/-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white"/></a>
-</p>
