@@ -13,7 +13,7 @@ The service receives a YouTube video ID, fetches the video data using the offici
 ### Basic endpoint
 
 ```
-https://youtube-cards-0wtu.onrender.com/api/:id
+https://ytcards.audibert.dev/api/:id
 ```
 
 Replace `:id` with the YouTube video ID you want to display.
@@ -21,17 +21,17 @@ Replace `:id` with the YouTube video ID you want to display.
 Example:
 
 ```markdown
-![YouTube Card](https://youtube-cards-0wtu.onrender.com/api/card?id=dQw4w9WgXcQ)
+![YouTube Card](https://ytcards.audibert.dev/api/card?id=dQw4w9WgXcQ)
 ```
 
 ## Live Examples
 
-[![YouTube Card](https://youtube-cards-0wtu.onrender.com/api/RcBNKG2X6jU)](https://youtube.com/watch?v=RcBNKG2X6jU)
-[![YouTube Card](https://youtube-cards-0wtu.onrender.com/api/3sJCXoxgbHQ)](https://youtube.com/watch?v=3sJCXoxgbHQ)
-[![YouTube Card](https://youtube-cards-0wtu.onrender.com/api/UT8Z3U5gDsc)](https://youtube.com/watch?v=UT8Z3U5gDsc)
-[![YouTube Card](https://youtube-cards-0wtu.onrender.com/api/v2QfOkixp4k)](https://youtube.com/watch?v=v2QfOkixp4k)
-[![YouTube Card](https://youtube-cards-0wtu.onrender.com/api/gE0oBIy6rMA)](https://youtube.com/watch?v=gE0oBIy6rMA)
-[![YouTube Card](https://youtube-cards-0wtu.onrender.com/api/J75GuCvhLAE)](https://youtube.com/watch?v=J75GuCvhLAE)
+[![YouTube Card](https://ytcards.audibert.dev/api/RcBNKG2X6jU)](https://youtube.com/watch?v=RcBNKG2X6jU)
+[![YouTube Card](https://ytcards.audibert.dev/api/3sJCXoxgbHQ)](https://youtube.com/watch?v=3sJCXoxgbHQ)
+[![YouTube Card](https://ytcards.audibert.dev/api/UT8Z3U5gDsc)](https://youtube.com/watch?v=UT8Z3U5gDsc)
+[![YouTube Card](https://ytcards.audibert.dev/api/v2QfOkixp4k)](https://youtube.com/watch?v=v2QfOkixp4k)
+[![YouTube Card](https://ytcards.audibert.dev/api/gE0oBIy6rMA)](https://youtube.com/watch?v=gE0oBIy6rMA)
+[![YouTube Card](https://ytcards.audibert.dev/api/J75GuCvhLAE)](https://youtube.com/watch?v=J75GuCvhLAE)
 
 ## Parameters
 
@@ -51,12 +51,12 @@ You can customize your card by adding the following query parameters:
 ### Example with all parameters:
 
 ```markdown
-[![YouTube Card](https://youtube-cards-0wtu.onrender.com/api/G9PNoGMO2-4?width=250&theme=github&max_title_lines=2&show_duration=false)](https://youtube.com/watch?v=G9PNoGMO2-4)
+[![YouTube Card](https://ytcards.audibert.dev/api/G9PNoGMO2-4?width=250&theme=github&max_title_lines=2&show_duration=false)](https://youtube.com/watch?v=G9PNoGMO2-4)
 ```
 
 ### Output:
 
-[![YouTube Card](https://youtube-cards-0wtu.onrender.com/api/G9PNoGMO2-4?width=250&theme=github&max_title_lines=2&show_duration=false)](https://youtube.com/watch?v=G9PNoGMO2-4)
+[![YouTube Card](https://ytcards.audibert.dev/api/G9PNoGMO2-4?width=250&theme=github&max_title_lines=2&show_duration=false)](https://youtube.com/watch?v=G9PNoGMO2-4)
 
 ## Contribuition
 
@@ -67,7 +67,3 @@ Make sure your request is meaningful and you have tested the app locally before 
 ## Support
 
 _If you're using this repo, feel free to show support and give this repo a ⭐ star! It means a lot, thank you :)_
-
-<p align="left">
-  <a href="https://www.youtube.com/channel/UCIO1e3zJ-c2oQCWnmY4nqIQ?sub_confirmation=1"><img alt="Youtube" title="Youtube" src="https://img.shields.io/badge/-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white"/></a>
-</p>
