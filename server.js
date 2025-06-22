@@ -4,7 +4,7 @@ const routes = require("./routes");
 
 // Server configuration
 const app = express();
-const PORT = 3100;
+const PORT = 80;
 
 // CORS configuration to allow access from any origin
 app.use((req, res, next) => {
