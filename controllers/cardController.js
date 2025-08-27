@@ -63,7 +63,7 @@ async function generateYoutubeCard(req, res) {
   if (width) {
     const parsedWidth = parseInt(width);
     if (!isNaN(parsedWidth)) {
-      cardWidth = Math.max(250, Math.min(1000, parsedWidth));
+      cardWidth = Math.max(200, Math.min(1000, parsedWidth));
     }
   }
 
